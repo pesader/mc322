@@ -2,7 +2,7 @@
 
 ## Notebook 1 sobre Empréstimos
 
-[Notebook 1](notebook/emprestimo01.ipynb)
+[Notebook 1](notebook/emprestimo01-ra243245.ipynb)
 
 ## Notebook 2 sobre Empréstimos e TAD (opcional)
 
