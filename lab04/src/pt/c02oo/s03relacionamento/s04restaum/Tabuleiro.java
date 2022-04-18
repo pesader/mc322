@@ -23,6 +23,7 @@ public class Tabuleiro {
 				if (mapa[i][j] == 'P') {
 					Coordenada coord = new Coordenada(i, j);
 					Peca p = new Peca(coord, true);
+					p.setTab(this);
 					tab[i][j] = p;
 				} else {
 					tab[i][j] = null;
