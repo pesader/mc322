@@ -30,24 +30,27 @@ public class Peca {
 
 	public boolean validarMovimento(Coordenada target) {
 		Coordenada source = this.coord;
-
+		
 		if (source.getCol() == target.getCol()) {
 			Coordenada between = new Coordenada((source.getLin() + target.getLin()) / 2, target.getCol());
 			return ((Math.abs(source.getLin() - target.getLin()) == 2)
-					&& this.tab.getPecaAtCoord(target) != null
-					&& this.tab.getPecaAtCoord(target).isAtiva()
+					&& this.tab.getPecaAtCoord(source) != null
+					&& this.tab.getPecaAtCoord(source).isAtiva()
 					&& this.tab.getPecaAtCoord(between) != null
 					&& this.tab.getPecaAtCoord(between).isAtiva());
 
 		} else if (source.getLin() == target.getLin()) {
 			Coordenada between = new Coordenada(target.getLin(), (source.getCol() + target.getCol()) / 2);
+			System.out.println("mesma linha");
 			return ((Math.abs(source.getCol() - target.getCol()) == 2)
-					&& this.tab.getPecaAtCoord(target) != null
-					&& this.tab.getPecaAtCoord(target).isAtiva()
+					&& this.tab.getPecaAtCoord(source) != null
+					&& this.tab.getPecaAtCoord(source).isAtiva()
 					&& this.tab.getPecaAtCoord(between) != null
 					&& this.tab.getPecaAtCoord(between).isAtiva());
-		} else
+			
+		} else {
 			return false;
+		}
 	}
 
 	public boolean isAtiva() {

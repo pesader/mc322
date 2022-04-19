@@ -59,7 +59,8 @@ public class Coordenada {
 	 */
 	public static Coordenada stringToCoordenada(String str) {
 		int col = ((int) str.charAt(0)) - 97;
-		int lin = (int) str.charAt(1) - 1;
+		int lin = ((int) str.charAt(1)) - 49;
+
 		return new Coordenada(lin, col);
 	}
 

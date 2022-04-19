@@ -18,9 +18,11 @@ public class AppRestaUm {
          String source_str = commands[l].substring(0, 2);
          String target_str = commands[l].substring(3, 5);
          String titulo = "source: " + source_str + "; target: " + target_str;
-
-         tab.moverPeca(Coordenada.stringToCoordenada(source_str),
-               Coordenada.stringToCoordenada(target_str));
+         
+         Coordenada source = Coordenada.stringToCoordenada(source_str);
+         Coordenada target = Coordenada.stringToCoordenada(target_str);
+         
+         tab.moverPeca(source, target);
          mapa = tab.tabuleiroToChars();
          tk.writeBoard(titulo, mapa);
 

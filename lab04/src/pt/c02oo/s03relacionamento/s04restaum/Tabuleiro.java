@@ -41,17 +41,18 @@ public class Tabuleiro {
 	}
 
 	public void moverPeca(Coordenada source, Coordenada target) {
-		Peca pm = getPecaAtCoord(source); // peça movida
+		Peca pm = this.getPecaAtCoord(source); // peça movida
+		// System.out.println(pm.validarMovimento(target));
 		if (pm.validarMovimento(target)) {
 			pm.setCoord(target);
-			tab[target.getLin()][target.getCol()] = pm;
-			tab[source.getLin()][source.getCol()] = null;
+			this.tab[target.getLin()][target.getCol()] = pm;
+			this.tab[source.getLin()][source.getCol()] = null;
 
 			Coordenada between = new Coordenada((source.getLin() + target.getLin()) / 2,
 					(source.getCol() + target.getCol()) / 2);
 			Peca pc = getPecaAtCoord(between); // peça comida
 			pc.setAtiva(false);
-			tab[between.getLin()][between.getCol()] = null;
+			this.tab[between.getLin()][between.getCol()] = null;
 
 		}
 	}
