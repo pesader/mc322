@@ -25,12 +25,12 @@ public class Peca {
 	}
 
 	public void setCoord(Coordenada coord) {
-		this.coord = coord;		
+		this.coord = coord;
 	}
 
 	public boolean validarMovimento(Coordenada target) {
 		Coordenada source = this.coord;
-		
+
 		if (source.getCol() == target.getCol()) {
 			Coordenada between = new Coordenada((source.getLin() + target.getLin()) / 2, target.getCol());
 			return ((Math.abs(source.getLin() - target.getLin()) == 2)
@@ -47,7 +47,7 @@ public class Peca {
 					&& this.tab.getPecaAtCoord(source).isAtiva()
 					&& this.tab.getPecaAtCoord(between) != null
 					&& this.tab.getPecaAtCoord(between).isAtiva());
-			
+
 		} else {
 			return false;
 		}
